@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"  isELIgnored="false"%>
+         pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Result Page</title>
+    <title>View Employee</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,16 +19,18 @@
             color: #333;
         }
 
-        .result {
+        .employee-details {
             margin-top: 20px;
-            font-size: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-<h2>Result</h2>
-<div class="result">
-    Result: ${result}
+<h2>View Employee</h2>
+<div class="employee-details">
+    First Name: ${employee.firstName }<br>
+    Gender: ${employee.gender }<br>
+    Hobby: ${employee.hobby }<br>
 </div>
 </body>
 </html>
