@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>New Book Form</title>
+    <title>Signup</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +27,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
             width: calc(100% - 10px);
             padding: 8px;
             margin-bottom: 15px;
@@ -51,18 +52,24 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-<h2>New Book</h2>
-<form action="savebook" method="post">
-    <label for="bookName">Book Name:</label><br>
-    <input type="text" id="bookName" name="bookName"><br><br>
-
-    <label for="authorName">Author Name:</label><br>
-    <input type="text" id="authorName" name="authorName"><br><br>
-
-    <input type="submit" value="Save Book">
+<h2>Signup</h2>
+<form action="saveuser" method="post">
+    First Name: <input type="text" name="firstName"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    <input type="submit" value="Sign Up">
 </form>
+<br><br>
+<a href="login">Login</a>
 </body>
 </html>

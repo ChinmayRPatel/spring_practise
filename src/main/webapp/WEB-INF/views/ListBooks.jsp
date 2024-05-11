@@ -6,11 +6,32 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Books Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
 
-<table border="1">
+<table>
     <tr>
         <th>BookId</th>
         <th>BookName</th>
@@ -21,7 +42,7 @@
         <tr>
             <td>${b.id}</td>
             <td>${b.bookName}</td>
-            <tD>${b.authorName}</tD>
+            <td>${b.authorName}</td>
         </tr>
     </c:forEach>
 </table>
