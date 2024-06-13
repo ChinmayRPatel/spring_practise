@@ -44,6 +44,10 @@ public class ProductController {
         System.out.println(product.getPrice());
         System.out.println(product.getCategory());
         System.out.println(product.getQty());
+//             System.out.println("Name :- " + "Studetn- abc");
+//             System.out.println("Player Type :- " + "Bas Man");
+//             System.out.println("Food :- " + "Special");
+//             System.out.println("Dring  :- " + "CC");
         model.addAttribute("product", product);
          if(isError == false){
                 return "ProductDetails";
@@ -51,6 +55,7 @@ public class ProductController {
 
              return "NewProduct";
          }
+
 
     }
 }

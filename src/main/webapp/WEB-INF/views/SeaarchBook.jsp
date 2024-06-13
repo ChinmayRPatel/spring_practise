@@ -4,14 +4,16 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Search Book</title>
 </head>
 <body>
-<h2>View Book</h2>
-Name : ${book.bookName }<Br>
-Author: ${book.authorName }<Br><br>
 
-<a href="listbooks">List ALL Books</a>
+<form action="searchbook" method="post">
+
+    BookName : <input type="text" name="bookName"/>
+    <br><br>
+    <input type="submit" value="Search" />
+</form>
 
 </body>
 </html>

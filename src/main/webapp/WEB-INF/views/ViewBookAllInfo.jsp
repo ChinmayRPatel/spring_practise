@@ -8,10 +8,10 @@
 </head>
 <body>
 <h2>View Book</h2>
-Name : ${book.bookName }<Br>
-Author: ${book.authorName }<Br><br>
 
-<a href="listbooks">List ALL Books</a>
+BookId: ${book.id }<br>
+BookName: ${book.bookName }<br>
+AuthorName:  ${book.authorName }<br>
 
 </body>
 </html>

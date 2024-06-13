@@ -6,43 +6,29 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Books Table</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
+    <title>Insert title here</title>
 </head>
 <body>
 
-<table>
+<br>
+<a href="searchbook">Search</a>
+<br><br>
+<table border="1">
     <tr>
-        <th>BookId</th>
+        <th>Id</th>
         <th>BookName</th>
-        <th>AuthorName</th>
+
+        <th>Action</th>
     </tr>
 
     <c:forEach items="${books}" var="b">
         <tr>
             <td>${b.id}</td>
             <td>${b.bookName}</td>
-            <td>${b.authorName}</td>
+            <td>
+                <a href="deletebook?id=${b.id}">Delete</a>|
+                <a href="viewbook?id=${b.id}">View</a>
+            </td>
         </tr>
     </c:forEach>
 </table>

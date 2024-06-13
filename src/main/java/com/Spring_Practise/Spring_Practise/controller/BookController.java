@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -42,4 +43,42 @@ public class BookController {
         model.addAttribute("books",books);
         return "ListBooks";
     }
+
+    @GetMapping("/searchbook")
+    public String searchBook() {
+        return "SearchBook";// jsp name -> must not add .jsp
+    }
+    @PostMapping("/searchbook")
+    public String searchBookDb(BoookBean bookBean, Model model) {
+
+        // select * from book where bookName like '%java%';
+        // select * from books where bookName like 'java';
+
+        List<BoookBean> books = stmt.query("select * from books where bookName like ?",
+                new BeanPropertyRowMapper<BoookBean>(BoookBean.class),
+                new Object[] { "%" + bookBean.getBookName() + "%" });
+        model.addAttribute("books", books);
+        return "ListBooks";
+    }
+
+    @GetMapping("/deletebook")
+    public String deleteBook(BoookBean bookBean, Model model){
+        System.out.println(bookBean.getId());
+        stmt.update("delete from books where Id = ?", bookBean.getId());
+        return "redirect:/listbooks";
+    }
+
+    @GetMapping("/viewbook")
+    public String viewBook(BoookBean bookBean,Model model) {
+
+        BoookBean book = stmt.queryForObject("select * from books where id  = ?",
+                new BeanPropertyRowMapper<BoookBean>(BoookBean.class), new Object[] { bookBean.getId() });// id :
+        // single :
+        // 1 record
+        model.addAttribute("book",book);
+
+        return "ViewBookAllInfo";
+    }
+
+
 }
